@@ -77,7 +77,7 @@ def definir(codigo):
     if palabra_actual:
         tokens.append(palabra_actual)
 
-    # 🔹 FILTRAR SOLO TOKENS VÁLIDOS Y DETENER SI HAY ERRORES
+    # filtar si hay errores
     tokens_filtrados = []
     for token in tokens:
         if token not in palabras_reservadas and token not in variables_definidas and token not in procedimientos_definidos and not token.isdigit():
