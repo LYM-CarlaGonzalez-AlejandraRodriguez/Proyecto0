@@ -190,9 +190,26 @@ def imprimir_arbol(arbol, nivel=0):
                 else:
                     print("  " * (nivel + 1) + str(elemento))
 
+def leer_archivo(filename):
+    with open(filename, 'r') as file:
+        return file.read()
 
+
+# Código principal
+if __name__ == "__main__":
+    filename = input("Ingrese el nombre del archivo: ")
+    code = leer_archivo(filename)
+    
+    es_valido, arbol_parseo = analizar(code)
+
+    if es_valido:
+        print("Código válido")
+        print("\nÁrbol de parseo:")
+        imprimir_arbol(arbol_parseo)
+    else:
+        print("Código inválido")
 # Código de prueba
-code = """
+""" code =
 |nom x y one|
 
 proc putChips: n andBalloons: m [ 
@@ -214,7 +231,7 @@ proc goWest [
     putChips: 2 andBalloons: 1 .
 ]
 """
-
+"""
 es_valido, arbol_parseo = analizar(code)
 
 if es_valido:
@@ -223,3 +240,4 @@ if es_valido:
     imprimir_arbol(arbol_parseo)
 else:
     print("Código inválido")
+"""
